@@ -16,7 +16,7 @@
                     </a>
                 </div>
                 <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                    <p class="text-sm leading-6 text-gray-900">{{ $employer[$job['id']] }}</p>
+                    <p class="text-sm leading-6 text-gray-900">{{ $job->employer->name }}</p>
                     <p class="mt-1 text-xs leading-5 text-gray-500">Posted
                         <time datetime="{{ $job['created_at'] }}">{{ $job['created_at'] }}</time>
                     </p>
@@ -25,6 +25,10 @@
 
             <hr class="my-6 h-0.5 border-t-0 bg-gray-200"/>
         @endforeach
+
+        <div>
+            {{ $jobs->links() }}
+        </div>
     </ul>
 
 </x-layout>

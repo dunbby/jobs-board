@@ -10,7 +10,7 @@
         </p>
 
         <p class="mt-4">
-            Job listing by: <strong>{{ $employer['name'] }}<strong>
+            Job listing by: <strong>{{ $job->employer->name }}<strong>
         </p>
     </ul>
 </x-layout>

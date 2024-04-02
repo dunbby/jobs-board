@@ -8,22 +8,15 @@ Route::get('/', function () {
 });
 
 Route::get('/jobs', function () {
-    $jobs = Job::all();
-    $employer = [];
-
-    foreach ($jobs as $job):
-        $employer[$job['id']] = $job->employer->name;
-    endforeach;
+    $jobs = Job::with('employer')->simplePaginate(3);
 
     return view('jobs', [
-        'jobs' => $jobs,
-        'employer' => $employer
+        'jobs' => $jobs
     ]);
 });
 
 Route::get('/job/{id}', function ($id) {
     return view('job', [
-        'job' => Job::find($id),
-        'employer' => Job::find($id)->employer
+        'job' => Job::find($id)
     ]);
 });
