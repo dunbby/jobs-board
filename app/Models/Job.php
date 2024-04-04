@@ -11,7 +11,7 @@ class Job extends Model
 
     protected $table = 'job_listings';
 
-    protected $fillable = ['name', 'salary'];
+    protected $guarded = [];
 
     public function employer(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
