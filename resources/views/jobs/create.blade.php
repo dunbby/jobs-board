@@ -23,6 +23,11 @@
                                        placeholder="Software Engineer">
                             </div>
                         </div>
+
+                        @error('title')
+                        <p class="text-sm text-red-500 mt-2">{{ $message }}</p>
+                        @enderror
+
                     </div>
                     <div class="sm:col-span-4">
                         <label for="salary" class="block text-sm font-medium leading-6 text-gray-900">Salary</label>
@@ -34,6 +39,10 @@
                                        placeholder="$50,000">
                             </div>
                         </div>
+
+                        @error('salary')
+                        <p class="text-sm text-red-500 mt-2">{{ $message }}</p>
+                        @enderror
                     </div>
                 </div>
             </div>

@@ -3,16 +3,6 @@
         Job listings
     </x-slot:heading>
 
-
-    <div class="mt-6 flex items-center justify-start gap-x-6">
-        <a href="/jobs/create"
-           class="rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
-            Post a new Job
-        </a>
-    </div>
-
-    <hr class="my-6 h-0.5 border-t-0 bg-gray-200"/>
-
     <ul role="list" class="divide-y divide-gray-100">
         @foreach ($jobs as $job)
             <li class="flex justify-between gap-x-6 py-5">
