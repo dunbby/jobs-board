@@ -40,27 +40,27 @@ Route::post('/jobs', function () {
 });
 
 //show view
-Route::get('/jobs/{id}', function ($id) {
+Route::get('/jobs/{job}', function (Job $job) {
     return view('jobs.show', [
-        'job' => Job::find($id)
+        'job' => Job::find($job->id)
     ]);
 });
 
 //edit view
-Route::get('/jobs/{id}/edit', function ($id) {
+Route::get('/jobs/{job}/edit', function (Job $job) {
     return view('jobs.edit', [
-        'job' => Job::find($id)
+        'job' => $job->find($job->id)
     ]);
 });
 
 //update
-Route::patch('/jobs/{id}', function ($id) {
+Route::patch('/jobs/{job}', function (Job $job) {
     request()->validate([
         'title' => ['required', 'min:3'],
         'salary' => ['required']
     ]);
 
-    $job = Job::findOrFail($id);
+    $job::findOrFail($job->id);
 
     $job->update([
         'title' => request('title'),
@@ -71,8 +71,8 @@ Route::patch('/jobs/{id}', function ($id) {
 });
 
 //destroy
-Route::delete('/jobs/{id}', function ($id) {
-    Job::findOrFail($id)->delete();
+Route::delete('/jobs/{job}', function (Job $job) {
+    $job::findOrFail($job->id)->delete();
 
     return redirect('/jobs');
 });
