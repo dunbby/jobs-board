@@ -33,7 +33,7 @@
                         @auth()
                             <form action="/logout" method="POST">
                                 @csrf
-                                <x-button :type="button" type="submit">Log Out</x-button>
+                                <x-nav-link :type="button" type="submit">Log Out</x-nav-link>
                             </form>
                         @endauth
                     </div>
