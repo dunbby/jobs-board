@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 //home view
 Route::view('/', 'home');
 
+
 //job routes
 //Route::resource('jobs', JobController::class)->middleware('auth');
 
